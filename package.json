@@ -1,0 +1,31 @@
+{
+  "name": "zama-dapp-demo",
+  "version": "1.0.0",
+  "description": "Web3 Matchmaker Demo using Zama FHE",
+  "source": "index.html",
+  "scripts": {
+    "start": "npx parcel index.html mint.html",
+    "build": "npx parcel build index.html mint.html"
+  },
+  "keywords": [
+    "zama",
+    "fhe",
+    "fhevm",
+    "web3",
+    "demo"
+  ],
+  "author": "Anubhav",
+  "license": "ISC",
+  "dependencies": {
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "@zama-fhe/relayer-sdk": "^0.2.0",
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "parcel": "^2.10.0",
+    "process": "^0.11.10"
+  },
+  "type": "module"
+}

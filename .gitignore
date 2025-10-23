@@ -1,0 +1,6 @@
+# Ignore Node.js dependencies
+/node_modules
+
+# Ignore Parcel cache and built files
+/.parcel-cache
+/dist

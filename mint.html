@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Matchmaker - Mint Pass</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="connectionArea">
+        <img src="vectorhandshake.png" alt="Web3 Matchmaker Logo">
+        <h1>Membership Pass</h1>
+        <p>You need the Membership Pass NFT to use the Matchmaker DApp.</p>
+        <p style="font-size: 0.9em; color: #999;">(This is a free mint on the Sepolia testnet).</p>
+        
+        <button id="connectButton" style="margin-top: 20px;">Connect Wallet</button>
+        
+        <button id="mintButton" style="display: none; margin-top: 20px; padding: 12px 24px; font-size: 18px;">
+            Mint Your Free Pass
+        </button>
+        
+        <p id="statusMessage" style="color: white; margin-top: 15px;"></p>
+        
+        <p id="goToDapp" style="display: none; margin-top: 30px;">
+            Mint successful! You can now enter the DApp.<br>
+            <a href="index.html" style="color: yellow; font-weight: bold; font-size: 1.1em;">Go to Matchmaker DApp &rarr;</a>
+        </p>
+    </div>
+
+    <footer id="footer">
+        <p>Created by Anubhav</p>
+        <div class="social-links">
+            <a href="https://x.com/Xalty87562" target="_blank">X (Twitter)</a>
+            <span class="social-text">Discord: anubhav4861</span>
+        </div>
+    </footer>
+
+    <script src="mint.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+/* Reset default browser margins and make sure html/body take full height */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: yellow; /* Sets default text color to yellow */
+    font-family: 'Inter', sans-serif; /* Professional Font */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+    text-align: center;      /* Center text inside elements */
+    padding: 20px;
+    padding-top: 50px; /* Add specific padding at the top */
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure background covers at least full screen height */
+}
+
+/* --- Connection Area --- */
+#connectionArea img {
+    max-width: 600px; /* BIG logo size */
+    width: 80%;
+    height: auto;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 0, 0.8)); /* Softer, tighter yellow glow */
+}
+
+#connectionArea h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 2.5em; /* Make title bigger */
+}
+
+#connectionArea p {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* --- Quiz Area Styling (GRID LAYOUT) --- */
+#quizArea {
+    width: 90%; /* Use most of the width */
+    max-width: 1000px; /* Adjust max width as needed */
+    margin: 30px auto; /* Center the quiz area */
+    text-align: center; /* Center title/privacy text */
+}
+
+#quizArea h2 { /* Style quiz title */
+    text-align: center;
+    margin-bottom: 10px;
+    color: yellow; /* Ensure title is yellow */
+}
+
+#quizArea p:first-of-type { /* Style privacy text */
+     text-align: center;
+     color: lightgray;
+     margin-bottom: 40px; /* More space before grid starts */
+}
+
+/* The Grid Container for the questions */
+#quizForm {
+    display: grid;
+    /* Create responsive columns: as many as fit, min 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* Space between grid items (question boxes) */
+    text-align: left; /* Align text inside boxes left */
+}
+
+.question {
+    background-color: #1a1a1a;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    margin-bottom: 0; /* Remove bottom margin as grid gap handles spacing */
+    transition: all 0.2s ease-in-out; /* <-- ADDED TRANSITION */
+}
+
+/* <-- ADDED HOVER EFFECT FOR QUIZ CARDS */
+.question:hover {
+    transform: translateY(-5px); /* Lifts the card up */
+    border-color: #555;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.question p { /* Style question text */
+    color: yellow;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.question label {
+    color: white;
+    margin-left: 8px;
+    line-height: 1.8;
+    display: block; /* Make each option take its own line */
+    margin-bottom: 8px; /* Add space below each option */
+    cursor: pointer; /* <-- ADDED CURSOR */
+}
+
+.question input[type="radio"] {
+    transform: scale(1.1);
+    margin-right: 8px;
+    vertical-align: middle; /* Align radio button with text */
+    cursor: pointer; /* <-- ADDED CURSOR */
+}
+
+/* --- Community Hub Area --- */
+#hubArea {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+#hubArea h2 { /* Style hub title */
+    margin-bottom: 30px;
+}
+
+.profile-card {
+    background-color: #2a2a2a; /* Slightly lighter grey */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes button to the right */
+    border: 1px solid #444;
+    transition: all 0.2s ease-in-out; /* <-- ADDED TRANSITION */
+}
+
+/* <-- ADDED HOVER EFFECT FOR PROFILE CARDS */
+.profile-card:hover {
+    transform: translateY(-5px); /* Lifts the card up */
+    border-color: #777;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+    width: 40px; /* Size for avatar in card */
+    height: 40px;
+    border-radius: 50%; /* Make it round */
+    margin-right: 15px;
+    background-color: #555; /* Placeholder color */
+    flex-shrink: 0; /* Prevent avatar from shrinking */
+}
+
+ .avatar-small {
+    width: 30px; /* Smaller avatar for result screen */
+    height: 30px;
+    border-radius: 50%;
+    background-color: #555;
+}
+
+.profile-card span {
+    color: white;
+    flex-grow: 1; /* Allows name to take up space */
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* --- Generic Button Styles --- */
+button {
+    background-color: yellow;
+    color: black;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out; /* <-- ADDED TRANSITION */
+}
+
+button:hover {
+     background-color: #fff352; /* Lighter yellow on hover */
+     transform: scale(1.05); /* <-- ADDED SLIGHT GROW EFFECT */
+     box-shadow: 0 4px 15px rgba(255, 255, 0, 0.2); /* <-- ADDED SUBTLE GLOW */
+}
+
+/* --- Specific Button Overrides --- */
+#connectButton { padding: 12px 24px; font-size: 18px;}
+#submitQuizButton { padding: 12px 24px; font-size: 18px; margin-top: 30px; grid-column: 1 / -1; width: 100%; box-sizing: border-box;}
+#chatNowButton { margin-top: 20px; }
+#backToHubButton { margin-top: 10px; background-color: #555; color: white; } /* Make back grey */
+#backToHubButton:hover { 
+    background-color: #777; 
+    transform: scale(1.05); /* <-- ADDED SLIGHT GROW EFFECT */
+    box-shadow: none; /* <-- REMOVED GLOW FOR GREY BUTTON */
+}
+
+
+/* --- Result Area --- */
+#resultArea {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#resultArea h2 {
+    margin-bottom: 20px;
+}
+
+/* --- Visual Gauge Styles --- */
+.gauge-container {
+    width: 200px; /* Size of the gauge */
+    height: 200px;
+    border-radius: 50%; /* Make it round */
+    margin: 20px auto; /* Center it */
+    position: relative; /* Needed for positioning internal elements */
+    background: #333; /* Dark grey track background */
+    overflow: hidden; /* Hide parts of the fill that go outside */
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.3); /* Subtle yellow glow */
+}
+
+.gauge-fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* This gradient is the magic part */
+    background-image: conic-gradient(
+        yellow var(--gauge-angle, 0deg), /* Yellow part, angle controlled by JS */
+        #555 var(--gauge-angle, 0deg) /* Grey part for the rest */
+    );
+    transform-origin: center center;
+    transition: all 0.8s ease-out; /* Animate the fill */
+}
+
+.gauge-cover {
+    position: absolute;
+    width: 80%; /* Smaller inner circle */
+    height: 80%;
+    background-color: #1a1a1a; /* Dark background to cover center */
+    border-radius: 50%;
+    top: 10%; /* Center the inner circle */
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow */
+}
+
+/* Remove margin from scoreDisplay and paragraph inside cover */
+ #resultArea .gauge-cover #scoreDisplay,
+ #resultArea .gauge-cover p {
+     margin: 0;
+     line-height: 1.2;
+ }
+
+ /* Adjust score display size within gauge */
+ #resultArea .gauge-cover #scoreDisplay {
+    font-size: 2.8em; /* Adjust as needed */
+ }
+  /* Adjust text size within gauge */
+ #resultArea .gauge-cover p {
+    font-size: 0.9em;
+    color: yellow; /* Make "Match Score" text yellow */
+ }
+/* --- END Visual Gauge Styles --- */
+
+
+/* --- Chat Area Styling --- */
+#chatArea {
+    /* display is handled by JS */
+    flex-direction: column;
+    width: 90%;
+    max-width: 800px;
+    height: 70vh; /* Use viewport height */
+    margin: 30px auto; /* Center it */
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    overflow: hidden; /* Hide overflow */
+}
+
+.chat-header {
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.chat-header h3 {
+    color: yellow;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+#backToHubFromChatButton {
+    background-color: #555;
+    color: white;
+}
+#backToHubFromChatButton:hover { background-color: #777; }
+
+
+.chat-history {
+    flex-grow: 1; /* Takes up available space */
+    padding: 15px;
+    overflow-y: auto; /* Allow scrolling for messages */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+.message {
+    max-width: 70%;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+.message p { /* Reset paragraph margin inside bubble */
+    margin: 0;
+    color: white; /* Default text color */
+}
+
+.message.sent {
+    background-color: yellow;
+    color: black;
+    align-self: flex-end; /* Align sent messages to the right */
+    border-bottom-right-radius: 5px; /* Common chat bubble style */
+}
+.message.sent p {
+    color: black; /* Text color for sent bubble */
+}
+
+.message.received {
+    background-color: #3a3a3a; /* Darker grey for received */
+    color: white;
+    align-self: flex-start; /* Align received messages to the left */
+    border-bottom-left-radius: 5px; /* Common chat bubble style */
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #333;
+    background-color: #2a2a2a;
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    background-color: #3a3a3a;
+    color: white;
+    margin-right: 10px;
+    outline: none; /* Remove focus outline */
+}
+
+#sendMessageButton { /* Style send button */
+    padding: 10px 18px;
+    border-radius: 20px; /* Match input field */
+}
+
+/* --- Footer Styling --- */
+#footer {
+    width: 100%;
+    padding: 40px 0 20px 0; /* Add space above and below */
+    margin-top: auto; /* Pushes the footer to the bottom */
+    text-align: center;
+}
+
+#footer p {
+    color: #777; /* Light grey color */
+    font-size: 0.9em;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+/* Style for the clickable X link */
+.social-links a {
+    color: yellow; /* Link color */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    color: #fff352; /* Lighter yellow on hover */
+}
+
+/* Style for the non-clickable Discord text */
+.social-links span {
+    color: #777; /* Match the 'Created by' text color */
+    font-size: 0.9em;
+    margin: 0 10px;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Matchmaker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="connectionArea">
+        <img src="vectorhandshake.png" alt="Web3 Matchmaker Logo">
+        <h1>Web3 Matchmaker</h1>
+        <p>Find Your Tribe, Privately.</p>
+        <button id="connectButton">Connect Wallet</button>
+        <p id="statusMessage" style="color: white; margin-top: 15px;"></p> </div>
+
+    <div id="quizArea" style="display: none;">
+        <h2>Your Private Quiz</h2>
+        <p>🔒 Your answers are encrypted and will never be shared.</p>
+
+        <form id="quizForm">
+            <div class="question">
+                <p><strong>1. What's your primary role or skill you bring to a Web3 project?</strong></p>
+                <input type="radio" id="q1a" name="q1" value="0" required> <label for="q1a">Development / Tech</label><br>
+                <input type="radio" id="q1b" name="q1" value="1"> <label for="q1b">Design / Creative</label><br>
+                <input type="radio" id="q1c" name="q1" value="2"> <label for="q1c">Community / Marketing</label><br>
+                <input type="radio" id="q1d" name="q1" value="3"> <label for="q1d">Strategy / Operations</label><br>
+            </div>
+
+            <div class="question">
+                <p><strong>2. When collaborating, what's most important to you?</strong></p>
+                <input type="radio" id="q2a" name="q2" value="0" required> <label for="q2a">Speed & Action</label><br>
+                <input type="radio" id="q2b" name="q2" value="1"> <label for="q2b">Quality & Detail</label><br>
+                <input type="radio" id="q2c" name="q2" value="2"> <label for="q2c">Creativity & Innovation</label><br>
+                <input type="radio" id="q2d" name="q2" value="3"> <label for="q2d">Harmony & Consensus</label><br>
+            </div>
+
+            <div class="question">
+                <p><strong>3. Which time zone block best describes your active hours?</strong></p>
+                <input type="radio" id="q3a" name="q3" value="0" required> <label for="q3a">Americas (West/East)</label><br>
+                <input type="radio" id="q3b" name="q3" value="1"> <label for="q3b">Europe / Africa</label><br>
+                <input type="radio" id="q3c" name="q3" value="2"> <label for="q3c">Asia / Oceania</label><br>
+                <input type="radio" id="q3d" name="q3" value="3"> <label for="q3d">Flexible / Around the clock</label><br>
+            </div>
+
+            <div class="question">
+                <p><strong>4. Which area of Web3 are you most passionate about?</strong></p>
+                <input type="radio" id="q4a" name="q4" value="0" required> <label for="q4a">DeFi</label><br>
+                <input type="radio" id="q4b" name="q4" value="1"> <label for="q4b">NFTs / Metaverse / Gaming</label><br>
+                <input type="radio" id="q4c" name="q4" value="2"> <label for="q4c">Infrastructure / Protocols / ZK</label><br>
+                <input type="radio" id="q4d" name="q4" value="3"> <label for="q4d">DAOs / Governance / Public Goods</label><br>
+            </div>
+
+            <div class="question">
+                <p><strong>5. How do you prefer to contribute?</strong></p>
+                <input type="radio" id="q5a" name="q5" value="0" required> <label for="q5a">Leading</label><br>
+                <input type="radio" id="q5b" name="q5" value="1"> <label for="q5b">Building</label><br>
+                <input type="radio" id="q5c" name="q5" value="2"> <label for="q5c">Connecting</label><br>
+                <input type="radio" id="q5d" name="q5" value="3"> <label for="q5d">Supporting</label><br>
+            </div>
+
+            <button type="submit" id="submitQuizButton">Submit & Encrypt Answers</button>
+            <p id="quizStatusMessage" style="color: lightgrey; margin-top: 15px;"></p>
+        </form>
+        </div>
+
+    <div id="hubArea" style="display: none; width: 90%; max-width: 600px; margin-top: 30px; text-align: center;">
+        <h2>Community Hub</h2>
+        <div class="profile-card">
+            <img src="avatar-placeholder.png" alt="Avatar" class="avatar">
+            <span>Alice.eth</span>
+            <button class="compatibilityButton" data-target="Alice.eth">Check Compatibility</button>
+        </div>
+        <div class="profile-card">
+            <img src="avatar-placeholder.png" alt="Avatar" class="avatar">
+            <span>Bob.xyz</span>
+            <button class="compatibilityButton" data-target="Bob.xyz">Check Compatibility</button>
+        </div>
+        <div class="profile-card">
+            <img src="avatar-placeholder.png" alt="Avatar" class="avatar">
+            <span>Charlie.eth</span>
+            <button class="compatibilityButton" data-target="Charlie.eth">Check Compatibility</button>
+        </div>
+        <p id="hubStatusMessage" style="color: lightgrey; margin-top: 20px;"></p>
+    </div>
+
+    <div id="resultArea" style="display: none; margin-top: 40px; text-align: center; width: 90%; max-width: 600px;">
+        <h2>Compatibility Result</h2>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+             <img src="avatar-placeholder.png" alt="Avatar" class="avatar-small">
+            <span style="color: white; margin: 0 10px;">&</span>
+            <img src="avatar-placeholder.png" alt="Avatar" class="avatar-small">
+        </div>
+        <p id="resultUsernames" style="color: white; margin-bottom: 20px;">You & ...</p>
+        
+        <div class="gauge-container">
+            <div class="gauge-fill"></div>
+            <div class="gauge-cover">
+                <span id="scoreDisplay" style="font-size: 2.8em; font-weight: bold; color: yellow;">--%</span>
+                <p style="color: yellow; font-size: 0.9em; margin-top: 5px;">Match Score</p>
+            </div>
+        </div>
+        
+        <button id="chatNowButton" style="margin-top: 20px;">Chat Now</button>
+        <button id="backToHubButton" style="margin-top: 10px;">Back to Hub</button>
+    </div>
+
+    <div id="chatArea" style="display: none; width: 90%; max-width: 800px; height: 70vh; margin-top: 30px; border: 1px solid #333; border-radius: 10px; background-color: #1a1a1a; flex-direction: column;">
+        <div class="chat-header">
+            <h3 id="chatPartnerName">Chatting with...</h3>
+            <button id="backToHubFromChatButton">Back to Hub</button>
+        </div>
+        <div id="chatHistory" class="chat-history">
+            <div class="message received"><p>Hi there! Saw we matched.</p></div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendMessageButton">Send</button>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <p>Created by Anubhav</p>
+        <div class="social-links">
+            <a href="https://x.com/Xalty87562" target="_blank">X (Twitter)</a>
+            <span class="social-text">Discord: anubhav4861</span>
+        </div>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
