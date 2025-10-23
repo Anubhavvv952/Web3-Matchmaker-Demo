@@ -27,7 +27,10 @@ git clone https://github.com/Anubhavvv952/Web3-Matchmaker-Demo.git
 cd Web3-Matchmaker-Demo
 
 Install dependencies and start:
+
+
 npm install
+
 npm start
 
 Open http://localhost:1234 in your browser.
