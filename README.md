@@ -48,17 +48,20 @@ Zama's FHEVM technology enables private comparisons on-chain without revealing t
 
 ## 💻 Run Locally
 
-Clone the repository
+```bash
+# Clone the repository
 git clone https://github.com/Anubhavvv952/Web3-Matchmaker-Demo.git
 cd Web3-Matchmaker-Demo
 
-Install dependencies
+# Install dependencies
 npm install
 
-Start development server
+# Start development server
 npm start
 
-Visit http://localhost:1234
+# Open in browser
+# Visit http://localhost:1234
+
 
 
 ---
