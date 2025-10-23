@@ -124,8 +124,3 @@ Web3-Matchmaker-Demo/
 
 This project is open source and available under the MIT License.
 
----
-
-**Built with ❤️ for the Zama Creator Program**
-
-*#ZamaCreatorProgram #FHE #Web3 #Privacy*
